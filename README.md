@@ -14,7 +14,25 @@ TBA
   - [ ] Read from file
   - [ ] Auto generate cards (all features except art)
 - [ ] Players
-  - [ ] ADD MORE LATER
+  - [ ] Troops/Health/Empty Deck
+  - [ ] Energy
+  - [ ] Deck
+    - [ ] Discard
+    - [ ] Hand
+    - [ ] Draw pile
+  - [ ] Turns
+- [ ] Board
+  - [ ] Cards in play
+  - [ ] Attacks
+  - [ ] Infinite Scrolling
+- [ ] UX/UI
+  - [ ] Hand
+  - [ ] End Turn
+  - [ ] Board
+  - [ ] Health
+  - [ ] Energy
+  - [ ] Discards
+  - [ ] Draw Pile
 
 ## Potential Names
 
