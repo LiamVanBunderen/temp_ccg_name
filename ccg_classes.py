@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
-from pygame import Surface
+import pygame
 
 
 class Family(Enum):
@@ -17,7 +17,8 @@ class Card:
     FAMILY: Family = Family.KNIGHT
 
     def __post_init__(self):
-        self.art: Surface = self.generate_art()
+        self.art: pygame.Surface = self.generate_art()
 
-    def generate_art(self) -> Surface:
-        pass
+    def generate_art(self) -> pygame.Surface:
+        card: pygame.Surface = pygame.Surface((250, 350))
+        key: pygame.Color
