@@ -18,10 +18,15 @@ class Card:
     ID: str = "null"
 
     def __post_init__(self):
-        f = open("cards.json")
-        foundation: dict[str, int | str] = json.load(f)[self.ID]
-        f.close()
-        del f
+        try:
+            f = open("cards.json")
+            foundation: dict[str, int | str] = json.load(f)[self.ID]
+            f.close()
+        except:
+            printError("failed to load cards (json)")
+            sys.exit()
+        finally:
+            del f
 
         self.health: int = foundation["health"]
         self.damage: int = foundation["damage"]
@@ -86,20 +91,24 @@ class Card:
 
         key: pygame.Color = assets["base"].get_at((0, 0))
         text_colour: pygame.Color = assets["base"].get_at((1, 0))
-        num_colour: pygame.Color = assets["base"].get_at((1, 0))
+        num_colour: pygame.Color = assets["base"].get_at((2, 0))
+        if num_colour.a == 0:
+            num_colour = text_colour
 
         assets["base"].set_at((1, 0), key)
 
         card.fill(key)
         card.set_colorkey(key)
 
+        temp: int = 9
+
         card.blits(
             (
                 (assets["base"], (0, 0)),
                 (assets["description_box"], (25, 245)),
                 (assets["character_art"], (45, 35)),
-                (assets["health"], (41, 205)),
-                (assets["damage"], (126, 205)),
+                (assets["health"], (50, 205)),
+                (assets["damage"], (135, 205)),
             ),
             False,
         )
@@ -131,11 +140,11 @@ class Card:
             (
                 (
                     num_font.render(f"{self.health:02}", False, num_colour),
-                    (78, 221 - (num_font.size(f"{self.health:02}")[1] / 2)),
+                    (87, 221 - (num_font.size(f"{self.health:02}")[1] / 2)),
                 ),
                 (
                     num_font.render(f"{self.damage:02}", False, num_colour),
-                    (163, 221 - (num_font.size(f"{self.damage:02}")[1] / 2)),
+                    (172, 221 - (num_font.size(f"{self.damage:02}")[1] / 2)),
                 ),
             ),
             False,
@@ -160,18 +169,9 @@ if __name__ == "__main__":
     pygame.init()
     screen = pygame.display.set_mode((350, 450))
     pygame.display.set_caption("Testing_Card")
-    screen.fill(pygame.Color(120, 120, 120))
+    screen.fill(pygame.Color(0, 0, 0))
 
-    try:
-        f = open("cards.json")
-        json.load(f)
-        f.close()
-        del f
-    except:
-        printError("json failed to load")
-        sys.exit()
-
-    testCard = Card()
+    testCard = Card("archer")
 
     screen.blit(testCard.art, (50, 50))
 
