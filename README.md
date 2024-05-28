@@ -10,11 +10,11 @@ TBA
 
 ## Core Elements
 
-- [ ] Cards
-  - [ ] Read from file <!-- Liam -->
-  - [ ] Auto generate cards (all features except art) <!-- Liam -->
+- [X] Cards
+  - [X] Read from file <!-- Liam -->
+  - [X] Auto generate cards (all features except art) <!-- Liam -->
 - [ ] Players
-  - [ ] Troops/Health/Empty Deck <!-- Adin -->
+  - [x] Troops/Health/Empty Deck <!-- Adin -->
   - [ ] Energy <!-- Adin -->
   - [ ] Deck <!-- Adin -->
     - [ ] Discard
