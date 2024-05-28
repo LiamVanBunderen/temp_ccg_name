@@ -10,21 +10,21 @@ TBA
 
 ## Core Elements
 
-- [X] Cards
+- [X] Cards <!-- Liam -->
   - [X] Read from file <!-- Liam -->
   - [X] Auto generate cards (all features except art) <!-- Liam -->
-- [ ] Players
+- [ ] Players <!-- Adin -->
   - [x] Troops/Health/Empty Deck <!-- Adin -->
   - [ ] Energy <!-- Adin -->
   - [ ] Deck <!-- Adin -->
     - [ ] Discard
     - [ ] Hand
     - [ ] Draw pile
-  - [ ] Turns
-- [ ] Board
-  - [ ] Cards in play
-  - [ ] Attacks
-  - [ ] Infinite Scrolling
+- [ ] Board <!-- Liam -->
+  - [ ] Turns <!-- Liam -->
+  - [ ] Cards in play <!-- Liam -->
+  - [ ] Attacks <!-- Liam -->
+  - [ ] Infinite Scrolling <!-- Liam -->
 - [ ] UX/UI
   - [ ] Hand
   - [ ] End Turn
