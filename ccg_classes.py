@@ -182,4 +182,4 @@ if __name__ == "__main__":
             match event.type:
                 case pygame.QUIT:
                     pygame.quit()
-                    exit()
+                    sys.exit()
